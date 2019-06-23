@@ -28,7 +28,7 @@ public class DepartmentsSchedulings {
 	}
 	public void setHospitalDepartments(HospitalDepartments hospitalDepartments) {
 		this.hospitalDepartments = hospitalDepartments;
-	}
+	} 
 	public List<Scheduling> getSchedulings() {
 		return schedulings;
 	}
