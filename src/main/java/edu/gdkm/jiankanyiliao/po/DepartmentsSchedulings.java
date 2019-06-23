@@ -2,6 +2,15 @@ package edu.gdkm.jiankanyiliao.po;
 
 import java.util.List;
 
+/*
+ * 	描述：  科室排班类
+ * 		
+ * 
+ * 
+ * 
+ * 
+ * */
+
 public class DepartmentsSchedulings {
 	@Override
 	public String toString() {
@@ -26,7 +35,10 @@ public class DepartmentsSchedulings {
 	public void setSchedulings(List<Scheduling> schedulings) {
 		this.schedulings = schedulings;
 	}
+	//排班Id
 	private Integer dsId;
+	//科室
 	private HospitalDepartments hospitalDepartments;
+	//排班日期
 	private List<Scheduling> schedulings;
 }
