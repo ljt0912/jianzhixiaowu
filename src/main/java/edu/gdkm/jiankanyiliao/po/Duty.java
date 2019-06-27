@@ -1,23 +1,39 @@
 package edu.gdkm.jiankanyiliao.po;
 
 import java.util.List;
-
+/*
+ * 	值班类
+ * 
+ * */
 public class Duty {
 	@Override
 	public String toString() {
-		return "Duty [dutyId=" + dutyId + ", timeSlots=" + timeSlots + ", dutyQuantity=" + dutyQuantity
-				+ ", departmentsSchedulings=" + departmentsSchedulings + "]";
+		return "Duty [dutyId=" + dutyId + ", timeSlots=" + timeSlots + ", dutyQuantity=" + dutyQuantity + ", doctor="
+				+ doctor + "]";
 	}
-	public List<DutyTimeSlot> getTimeSlots() {
+	public Doctor getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+	public DutyTimeSlot getTimeSlots() {
 		return timeSlots;
 	}
-	public void setTimeSlots(List<DutyTimeSlot> timeSlots) {
+	public void setTimeSlots(DutyTimeSlot timeSlots) {
 		this.timeSlots = timeSlots;
 	}
+
+
+	
+	//值班编号
 	private Integer	dutyId;
-	private List<DutyTimeSlot> timeSlots;
+	//值班时间段
+	private DutyTimeSlot timeSlots;
+	//值班任务量
 	private int dutyQuantity;
-	private DepartmentsSchedulings departmentsSchedulings;
+	//科室排班情况
+	private Doctor doctor;
 
 	public Integer getDutyId() {
 		return dutyId;
@@ -31,10 +47,5 @@ public class Duty {
 	public void setDutyQuantity(int dutyQuantity) {
 		this.dutyQuantity = dutyQuantity;
 	}
-	public DepartmentsSchedulings getDepartmentsSchedulings() {
-		return departmentsSchedulings;
-	}
-	public void setDepartmentsSchedulings(DepartmentsSchedulings departmentsSchedulings) {
-		this.departmentsSchedulings = departmentsSchedulings;
-	}
+
 }

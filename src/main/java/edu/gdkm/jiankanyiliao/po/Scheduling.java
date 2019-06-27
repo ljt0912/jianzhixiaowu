@@ -1,6 +1,6 @@
 package edu.gdkm.jiankanyiliao.po;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Scheduling {
 	@Override

@@ -8,5 +8,9 @@
 </head>
 <body>
 	访问成功
+	<a href="selectdepartments">挂号预约</a>
+	
+	
 </body>
+
 </html>

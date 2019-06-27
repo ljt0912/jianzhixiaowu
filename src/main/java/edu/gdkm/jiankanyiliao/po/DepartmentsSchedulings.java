@@ -12,11 +12,24 @@ import java.util.List;
  * */
 
 public class DepartmentsSchedulings {
+	public Scheduling getSchedulings() {
+		return schedulings;
+	}
+	public void setSchedulings(Scheduling schedulings) {
+		this.schedulings = schedulings;
+	}
 	@Override
 	public String toString() {
-		return "DepartmentsScheduling [dsId=" + dsId + ", hospitalDepartments=" + hospitalDepartments + ", schedulings="
-				+ schedulings + "]";
+		return "DepartmentsSchedulings [dsId=" + dsId + ", hospitalDepartments=" + hospitalDepartments
+				+ ", schedulings=" + schedulings + ", dutys=" + dutys + "]";
 	}
+	public List<Duty> getDutys() {
+		return dutys;
+	}
+	public void setDutys(List<Duty> dutys) {
+		this.dutys = dutys;
+	}
+
 	public Integer getDsId() {
 		return dsId;
 	}
@@ -29,16 +42,13 @@ public class DepartmentsSchedulings {
 	public void setHospitalDepartments(HospitalDepartments hospitalDepartments) {
 		this.hospitalDepartments = hospitalDepartments;
 	} 
-	public List<Scheduling> getSchedulings() {
-		return schedulings;
-	}
-	public void setSchedulings(List<Scheduling> schedulings) {
-		this.schedulings = schedulings;
-	}
+
 	//排班Id
 	private Integer dsId;
 	//科室
 	private HospitalDepartments hospitalDepartments;
 	//排班日期
-	private List<Scheduling> schedulings;
+	private Scheduling schedulings;
+	//当天的值班情况
+	private List<Duty> dutys;
 }

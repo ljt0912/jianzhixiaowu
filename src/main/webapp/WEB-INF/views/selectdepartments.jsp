@@ -4,21 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>选择科室</title>
 </head>
-<body>
-1111
-
-
-
-<a href="/jiankanyiliao/selectdepartments/makeanappointment/getHsIdAndDId?hsId=3&dId=1">医生信息</a>
+<body>	
+	选择科室
+	<a href="/jiankanyiliao/selectdepartments/getDepartmentId?id=1">膏方门诊</a>
 </body>
-
- <script src="../../static/js/jquery.min.js"></script> 
+ <script src="../static/js/jquery.min.js"></script> 
 <script>
 	$(function(){
 		$.ajax({
-			url:"findDepatmentsSchedulings",
+			url:"selectdepartments",
 			type:"POST",
 			
 			success:function(data){

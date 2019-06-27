@@ -2,10 +2,10 @@ package edu.gdkm.jiankanyiliao.po;
 
 public class DutyTimeSlot {
 	public Integer getDutyTimeOutId() {
-		return DutyTimeOutId;
+		return dutyTimeOutId;
 	}
 	public void setDutyTimeOutId(Integer dutyTimeOutId) {
-		DutyTimeOutId = dutyTimeOutId;
+		dutyTimeOutId = dutyTimeOutId;
 	}
 	public String getTimeSlot() {
 		return timeSlot;
@@ -15,8 +15,8 @@ public class DutyTimeSlot {
 	}
 	@Override
 	public String toString() {
-		return "DutyTimeSlot [DutyTimeOutId=" + DutyTimeOutId + ", timeSlot=" + timeSlot + "]";
+		return "DutyTimeSlot [DutyTimeOutId=" + dutyTimeOutId + ", timeSlot=" + timeSlot + "]";
 	}
-	private Integer DutyTimeOutId;
+	private Integer dutyTimeOutId;
 	private String timeSlot;
 }
