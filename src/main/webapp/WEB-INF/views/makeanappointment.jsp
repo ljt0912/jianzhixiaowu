@@ -11,7 +11,7 @@
 
 
 
-<a href="/jiankanyiliao/selectdepartments/makeanappointment/getHsIdAndDId?hsId=3&dId=1">医生信息</a>
+<a href="/jiankanyiliao/selectdepartments/makeanappointment/getHsIdAndDId?dsId=3&dId=1">医生信息</a>
 </body>
 
  <script src="../../static/js/jquery.min.js"></script> 

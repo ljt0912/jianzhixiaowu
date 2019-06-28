@@ -34,7 +34,7 @@ import edu.gdkm.jiankanyiliao.service.MakeAnAppointmentService;
 @RestController
 @RequestMapping("/jiankanyiliao")
 
-public class ReturnDataContrller {
+public class ReturnDataController {
 	@Autowired
 	private BookingRegisterRepository brr;
 	@Autowired
@@ -60,9 +60,17 @@ public class ReturnDataContrller {
 	//查找科室具体某天的值班情况
 	@RequestMapping(value="/selectdepartments/makeanappointment/findDuty",method=RequestMethod.POST)
 	public List<Duty> findDuty(WebRequest request){
-		int hsId = (Integer)request.getAttribute("hsId", request.SCOPE_SESSION);
+		int dsId = (Integer)request.getAttribute("dsId", request.SCOPE_SESSION);
 		int dId = (Integer)request.getAttribute("dId", request.SCOPE_SESSION) ;
-		return dur.findDutyByIdWithDId(hsId, dId);
+		return dur.findDutyByIdWithDId(dsId, dId);
 	}
-
+	@RequestMapping(value="/selectdepartments/makeanappointment/updateQuantity",method=RequestMethod.GET)
+	public String updateQuantity(@RequestParam(value="dutyId")Integer dutyId,
+									@RequestParam(value="dutyQuantity")Integer quantity) {
+		int num = dur.updateQuantity(dutyId, quantity);
+		if(num > 0) {
+			return "SUCCESS";
+		}
+		return "ERROR";
+	}
 }

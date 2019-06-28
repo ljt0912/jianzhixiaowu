@@ -14,7 +14,7 @@ import edu.gdkm.jiankanyiliao.po.DutyTimeSlot;
 public interface DutyTimeSlotRepository {
 	@Select("select * from duty_time_slot where timeslot_id = #{tId}")
 	@Results({
-		@Result(property="dutyTimeOutId",column="tiemslot_id"),
+		@Result(property="timeSlotId",column="timeslot_id"),
 		@Result(property="timeSlot",column="time_slot")
 	})
 	public DutyTimeSlot findDutyTimeSlotById(@Param(value="tId")Integer tId);

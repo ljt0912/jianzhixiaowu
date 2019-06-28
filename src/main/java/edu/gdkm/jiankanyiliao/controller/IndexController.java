@@ -44,8 +44,8 @@ public class IndexController {
 	}
 	//获取路径中的hsId和dId参数值，并存到session中
 	@RequestMapping(value="/selectdepartments/makeanappointment/getHsIdAndDId",method=RequestMethod.GET)
-	public String getHsIdAndDId(@RequestParam(value="hsId")int hsId,@RequestParam(value="dId")int dId,WebRequest request) {
-		request.setAttribute("hsId", hsId, request.SCOPE_SESSION);
+	public String getHsIdAndDId(@RequestParam(value="dsId")int dsId,@RequestParam(value="dId")int dId,WebRequest request) {
+		request.setAttribute("dsId", dsId, request.SCOPE_SESSION);
 		request.setAttribute("dId", dId, request.SCOPE_SESSION);
 		return "redirect:/jiankanyiliao/selectdepartments/makeanappointment/haveAnAppointmentWithADoctor";
 	}

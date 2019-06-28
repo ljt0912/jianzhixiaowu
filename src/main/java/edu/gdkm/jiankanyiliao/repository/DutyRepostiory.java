@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Many;
 
@@ -33,8 +34,9 @@ public interface DutyRepostiory {
 	public List<Duty> findDutyById(@Param(value="id")Integer id);
 	
 	
-	@Select("select d.timeslot_id,d.duty_quantity,d.d_id from duty d where sch_hos_depa_id = #{hsId} and d_id = #{dId}")
+	@Select("select d.duty_id,d.timeslot_id,d.duty_quantity,d.d_id from duty d where sch_hos_depa_id = #{hsId} and d_id = #{dId}")
 	@Results({
+		@Result(property="dutyId",column="duty_id"),
 		@Result(property="dutyQuantity",column="duty_quantity"),
 		@Result(property="timeSlots",column="timeslot_id",
 				one=@One(select="edu.gdkm.jiankanyiliao.repository.DutyTimeSlotRepository.findDutyTimeSlotById")),
@@ -44,4 +46,7 @@ public interface DutyRepostiory {
 	})
 	public List<Duty> findDutyByIdWithDId(@Param(value="hsId")Integer hsId,@Param(value="dId")Integer dId);
 	
+	
+	@Update("update duty set duty_quantity = #{quantity}  where duty_id = #{dutyId} ")
+	public int updateQuantity(@Param(value="dutyId")Integer dutyId,@Param(value="quantity")Integer quantity);
 }

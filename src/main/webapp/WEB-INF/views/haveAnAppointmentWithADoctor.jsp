@@ -8,6 +8,7 @@
 </head>
 <body>
 	预约医生列表
+	<a  onclick="a()">预约医生</a>
 </body>
  <script src="../../../static/js/jquery.min.js"></script> 
 <script>
@@ -22,6 +23,22 @@
 					alert(obj);
 			}
 		})
+
 	});
+	function a(){
+		$.ajax({
+			url:"updateQuantity",
+			type:"GET",
+			data:{dutyId : 1,dutyQuantity:3},
+			success:function(data){
+				if(data == "SUCCESS"){
+					alert("预约成功");
+				}else{
+					alert("预约失败");
+				}
+			}
+			
+		});
+	}
 </script>
 </html>
